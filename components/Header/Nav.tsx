@@ -1,0 +1,47 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React from "react";
+
+const links = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "CV",
+    path: "/cv",
+  },
+  {
+    name: "Education",
+    path: "/education",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+];
+
+const Nav = () => {
+  const pathName = usePathname();
+  return (
+    <nav className="flex gap-6 ">
+      {links.map((link, index) => {
+        return (
+          <Link
+            href={link.path}
+            key={index}
+            className={`${
+              link.path === pathName && "text-primary border-b-2 border-primary"
+            }  font-medium hover:text-accent transition-all
+            `}
+          >
+            {link.name}
+          </Link>
+        );
+      })}
+    </nav>
+  );
+};
+
+export default Nav;
