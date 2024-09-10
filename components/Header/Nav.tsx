@@ -3,30 +3,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-const links = [
-  {
-    name: "Home",
-    path: "/",
-  },
-  {
-    name: "CV",
-    path: "/cv",
-  },
-  {
-    name: "Education",
-    path: "/education",
-  },
-  {
-    name: "Contact",
-    path: "/contact",
-  },
-];
+type linkProps = {
+  name: string;
+  path: string;
+};
 
-const Nav = () => {
+const Nav = ({ links }: { links: linkProps[] }) => {
   const pathName = usePathname();
   return (
     <nav className="flex gap-6 ">
-      {links.map((link, index) => {
+      {links?.map((link, index) => {
         return (
           <Link
             href={link.path}

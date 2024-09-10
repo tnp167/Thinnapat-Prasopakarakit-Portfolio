@@ -4,6 +4,31 @@ import Link from "next/link";
 import React from "react";
 import Nav from "./Nav";
 import { Button } from "../ui/button";
+import MobileNav from "./MobileNav";
+
+const links = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Projects",
+    path: "/projects",
+  },
+
+  {
+    name: "CV",
+    path: "/cv",
+  },
+  {
+    name: "Education",
+    path: "/education",
+  },
+  {
+    name: "Contact",
+    path: "/contact",
+  },
+];
 
 const Header = () => {
   return (
@@ -14,13 +39,15 @@ const Header = () => {
         </Link>
 
         <div className="hidden xl:flex items-center gap-8">
-          <Nav />
+          <Nav links={links} />
           <Link href="/contact">
             <Button>Hire me</Button>
           </Link>
         </div>
 
-        <div className="xl:hidden">mobile nav</div>
+        <div className="xl:hidden">
+          <MobileNav links={links} />
+        </div>
       </div>
     </header>
   );
