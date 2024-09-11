@@ -1,33 +1,44 @@
 "use client";
 
 import React from "react";
-import { GraduationCap } from "lucide-react";
+import {
+  GraduationCap,
+  Languages,
+  Mail,
+  MapPin,
+  Phone,
+  User,
+} from "lucide-react";
 import { FaCss3, FaHtml5, FaJs, FaReact } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 
 const about = {
   title: "About me",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi deleniti tempore distinctio autem inventore aliquid iure ipsam necessitatibus assumenda praesentium eos a, iusto reprehenderit vel minima sint perspiciatis sit quaerat?",
-
+    "I have a background in Electronic and Computer Engineering with a solid foundation in C, C++, Java, and Python. I am currently transitioning my career into software engineering, with a focus on becoming a full-stack web developer",
   info: [
     {
+      icon: <User />,
       fieldName: "Name",
       fieldValue: "Thinnapat Prasopakarakit",
     },
     {
+      icon: <Phone />,
       fieldName: "Phone",
       fieldValue: "(+44) 7498555482",
     },
     {
+      icon: <Mail />,
       fieldName: "Email",
       fieldValue: "tnp_167@outlook.com",
     },
     {
+      icon: <MapPin />,
       fieldName: "Location",
       fieldValue: "London, United Kingdom",
     },
     {
+      icon: <Languages />,
       fieldName: "Language",
       fieldValue: "English, Thai",
     },
@@ -129,17 +140,48 @@ const cv = () => {
     >
       <div className="container mx-auto">
         <Tabs
-          defaultValue="experience"
+          defaultValue="about"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[400px] mx-auto xl:mx-0 gap-6">
+            <TabsTrigger value="about">About me</TabsTrigger>
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
-            <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
 
           <div className="min-h-[70vh] w-full">
+            <TabsContent
+              value="about"
+              className="w-full text-center xl:text-left"
+            >
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className="max-w-[700px] text-white/60 mx-auto xl:mx-0">
+                  {about.description}
+                </p>
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 xl:gap-x-2 max-w-[700px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="flex items-center justify-center xl:justify-start gap-4"
+                      >
+                        <div className="flex gap-2 items-center">
+                          <span className="w-6 h-6 inline-flex items-center justify-center text-white/60">
+                            {item.icon}
+                          </span>
+                          <span className="text-white/60 ">
+                            {item.fieldName}:
+                          </span>
+                        </div>
+                        <span className="text-xl">{item.fieldValue}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </TabsContent>
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-2xl font-bold mb-7">{experience.title}</h3>
@@ -150,13 +192,13 @@ const cv = () => {
                     return (
                       <li
                         key={index}
-                        className="bg-[#232329] h-[400px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        className="bg-[#232329] h-[300px] lg:h-[400px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                       >
                         <span className="text-left text-primary text-[22px]">
                           {item.date}
                         </span>
                         <div className="flex flex-row lg:flex-col items-start justify-between w-full my-4">
-                          <h3 className="text-xl max-w-[300px] h-[60px] text-left order-2 lg:order-1">
+                          <h3 className="text-xl max-w-[300px] lg:h-[60px] text-left order-2 lg:order-1">
                             {item.event}
                           </h3>
                           <Badge
@@ -186,9 +228,6 @@ const cv = () => {
             </TabsContent>
             <TabsContent value="skills" className="w-full">
               skills
-            </TabsContent>
-            <TabsContent value="about" className="w-full">
-              about
             </TabsContent>
           </div>
         </Tabs>
