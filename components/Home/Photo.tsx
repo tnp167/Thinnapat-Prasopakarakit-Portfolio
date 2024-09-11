@@ -12,7 +12,7 @@ const Photo = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.25, duration: 0.3, ease: easeIn }}
       >
-        <motion.div className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute">
+        <motion.div className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten">
           <Image
             src="/assets/photo.jpeg"
             priority
