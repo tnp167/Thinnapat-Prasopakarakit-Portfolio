@@ -9,7 +9,6 @@ import {
   Phone,
   User,
 } from "lucide-react";
-import { FaCss3, FaHtml5, FaJs, FaReact } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 
 const about = {
@@ -93,29 +92,6 @@ const education = {
   ],
 };
 
-const skills = {
-  icon: <GraduationCap />,
-  title: "My skills",
-  items: [
-    {
-      icon: <FaHtml5 />,
-      name: "HTML 5",
-    },
-    {
-      icon: <FaCss3 />,
-      name: "CSS 3",
-    },
-    {
-      icon: <FaJs />,
-      name: "Javascript",
-    },
-    {
-      icon: <FaReact />,
-      name: "React.js",
-    },
-  ],
-};
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
@@ -127,6 +103,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 import { Description } from "@radix-ui/react-dialog";
+import Skills from "@/components/CV/Skills";
 
 const cv = () => {
   return (
@@ -145,9 +122,9 @@ const cv = () => {
         >
           <TabsList className="flex flex-col w-full max-w-[400px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="about">About me</TabsTrigger>
+            <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
           </TabsList>
 
           <div className="min-h-[70vh] w-full">
@@ -227,7 +204,7 @@ const cv = () => {
               education
             </TabsContent>
             <TabsContent value="skills" className="w-full">
-              skills
+              <Skills />
             </TabsContent>
           </div>
         </Tabs>
