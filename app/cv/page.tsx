@@ -203,7 +203,7 @@ const cv = () => {
             <TabsContent value="education" className="w-full">
               education
             </TabsContent>
-            <TabsContent value="skills" className="w-full">
+            <TabsContent value="skills" className="w-full mb-5">
               <Skills />
             </TabsContent>
           </div>
