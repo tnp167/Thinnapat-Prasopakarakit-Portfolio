@@ -1,14 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  GraduationCap,
-  Languages,
-  Mail,
-  MapPin,
-  Phone,
-  User,
-} from "lucide-react";
+import { Languages, Mail, MapPin, Phone, User } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const about = {
@@ -45,7 +38,7 @@ const about = {
 };
 
 const experience = {
-  title: "My experience",
+  title: "My Experience",
   items: [
     {
       event: "14th Thailand Olympiad in Informatics programming contest",
@@ -70,40 +63,13 @@ const experience = {
   ],
 };
 
-const education = {
-  icon: <GraduationCap />,
-  title: "My education",
-  items: [
-    {
-      institution: "Brainstation",
-      degree: "Diploma in Software Engineering",
-      duration: "Jan 2024 - Apr 2024",
-    },
-    {
-      institution: "University of Nottingham",
-      degree: "Bachelors in Electronic and Computer Engineering",
-      duration: "Sep 2021 - Jun 2023",
-    },
-    {
-      institution: "Thammasat University",
-      degree: "Bachelors in Electrical Engineering",
-      duration: "Aug 2019 - Jun 2021",
-    },
-  ],
-};
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 import { Description } from "@radix-ui/react-dialog";
 import Skills from "@/components/CV/Skills";
+import Education from "@/components/CV/Education";
 
 const cv = () => {
   return (
@@ -161,7 +127,7 @@ const cv = () => {
             </TabsContent>
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-2xl font-bold mb-7">{experience.title}</h3>
+                <h3 className="text-3xl font-bold mb-7">{experience.title}</h3>
               </div>
               <ScrollArea className="h-[400px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
@@ -201,7 +167,7 @@ const cv = () => {
               </ScrollArea>
             </TabsContent>
             <TabsContent value="education" className="w-full">
-              education
+              <Education />
             </TabsContent>
             <TabsContent value="skills" className="w-full mb-5">
               <Skills />
