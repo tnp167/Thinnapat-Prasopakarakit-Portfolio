@@ -21,6 +21,7 @@ import {
   SiCplusplus,
   SiPython,
   SiC,
+  SiFigma,
 } from "react-icons/si";
 const skills = {
   title: "My skills",
@@ -68,6 +69,12 @@ const skills = {
           name: "Sass",
           color: "group-hover:text-[#CC6699]",
           bg: "group-hover:bg-[#CC6699]",
+        },
+        {
+          icon: <SiFigma />,
+          name: "Figma",
+          color: "group-hover:text-[#F24E1E]",
+          bg: "group-hover:bg-[#F24E1E]",
         },
       ],
     },

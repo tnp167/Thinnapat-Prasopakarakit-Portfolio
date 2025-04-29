@@ -67,9 +67,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
-import { Description } from "@radix-ui/react-dialog";
 import Skills from "@/components/CV/Skills";
 import Education from "@/components/CV/Education";
+import Experience from "@/components/CV/Experience";
+import Certificates from "@/components/CV/Certificates";
 
 const cv = () => {
   return (
@@ -91,6 +92,7 @@ const cv = () => {
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
+            <TabsTrigger value="certificates">Certificates</TabsTrigger>
           </TabsList>
 
           <div className="min-h-[70vh] w-full">
@@ -126,51 +128,16 @@ const cv = () => {
               </div>
             </TabsContent>
             <TabsContent value="experience" className="w-full">
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-3xl font-bold mb-7">{experience.title}</h3>
-              </div>
-              <ScrollArea className="h-[400px]">
-                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                  {experience.items.map((item, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className="bg-[#232329] h-[300px] lg:h-[400px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
-                      >
-                        <span className="text-left text-primary text-[22px]">
-                          {item.date}
-                        </span>
-                        <div className="flex flex-row lg:flex-col items-start justify-between w-full my-4">
-                          <h3 className="text-xl max-w-[300px] lg:h-[60px] text-left order-2 lg:order-1">
-                            {item.event}
-                          </h3>
-                          <Badge
-                            variant="default"
-                            className="lg:mt-2 lg:mb-3 order-2 lg:order-1"
-                          >
-                            {item.role}
-                          </Badge>
-                        </div>
-
-                        {item.description.map((detail, index) => {
-                          return (
-                            <div className="w-full flex items-start gap-3">
-                              <span className="w-[6px] h-[6px] rounded-full bg-primary mt-2.5"></span>
-                              <p className="text-white/60">{detail}</p>
-                            </div>
-                          );
-                        })}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </ScrollArea>
+              <Experience />
             </TabsContent>
             <TabsContent value="education" className="w-full">
               <Education />
             </TabsContent>
             <TabsContent value="skills" className="w-full mb-5">
               <Skills />
+            </TabsContent>
+            <TabsContent value="certificates" className="w-full">
+              <Certificates />
             </TabsContent>
           </div>
         </Tabs>
