@@ -18,37 +18,31 @@ import WorksliderBtns from "@/components/Projects/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    title: "project1",
+    title: "Mind the Map",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-    stack: [{ name: "React.js" }, { name: "Express.js" }, { name: "SCSS" }],
-    image: "/assets/projects/project1.png",
-    live: "",
-    github: "",
+      "Mind the Map is your travel companion for London! Whether you're a visitor or resident, easily plan the route, find nearby restaurants and toilets. Plus, stay updated on tube and national rail statuses for smooth travels.",
+    stack: [
+      { name: "React.js" },
+      { name: "Express.js" },
+      { name: "JavaScript" },
+    ],
+    image: "/assets/projects/project01.png",
+    live: "https://www.mind-the-map.london/",
+    github: "https://github.com/tnp167/mind-the-map",
   },
   {
     num: "02",
-    title: "project2",
+    title: "Sprout Scribble",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+      "An e-commerce webiste. Users can browse products, add items to their cart, and complete purchases through a secure payment gateway. The platform also includes an admin dashboard where administrators can view detailed analytics, manage inventory, and oversee product listings",
     stack: [
       { name: "Next.js" },
       { name: "Tailwind CSS" },
       { name: "TypeScript" },
     ],
-    image: "/assets/projects/project2.png",
-    live: "",
-    github: "",
-  },
-  {
-    num: "03",
-    title: "project3",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-    stack: [{ name: "React.js" }, { name: "Express.js" }, { name: "SCSS" }],
-    image: "/assets/projects/project3.png",
-    live: "",
-    github: "",
+    image: "/assets/projects/project02.png",
+    live: "https://www.sprout-scribble-tutorial.store/",
+    github: "https://github.com/tnp167/sprout-scribble-tutorial",
   },
 ];
 const Projects = () => {
@@ -71,6 +65,10 @@ const Projects = () => {
               <div className="text-8xl leading-none font-extrabold text-white text-outline">
                 {project.num}
               </div>
+              {/* Project title */}
+              <h2 className="text-[40px] font-bold text-white leading-none group-hover:text-primary transition-all duration-500 capitalize">
+                {project.title}
+              </h2>
               {/* Project description */}
               <p className="text-white/60">{project.description}</p>
               {/* Stack */}

@@ -18,14 +18,14 @@ export default function Home() {
               user-friendly web applications
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-6">
-              <Button
+              {/* <Button
                 variant="outline"
                 size="lg"
                 className="uppercase flex items-center gap-2"
               >
                 <span>Download CV</span>
                 <Download />
-              </Button>
+              </Button> */}
               <div className="mb-8 xl:mb-0">
                 <Socials />
               </div>

@@ -27,7 +27,6 @@ const Nav = ({ links }: { links: linkProps[] }) => {
           </Link>
         );
       })}
-      <ModeToggle />
     </nav>
   );
 };
