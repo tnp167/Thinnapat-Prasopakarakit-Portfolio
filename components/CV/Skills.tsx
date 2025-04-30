@@ -22,6 +22,7 @@ import {
   SiPython,
   SiC,
   SiFigma,
+  SiPrisma,
 } from "react-icons/si";
 const skills = {
   title: "My skills",
@@ -109,6 +110,12 @@ const skills = {
           name: "Drizzle ORM",
           color: "group-hover:text-[#C5F74F]",
           bg: "group-hover:bg-[#C5F74F]",
+        },
+        {
+          icon: <SiPrisma />,
+          name: "Prisma",
+          color: "group-hover:text-[#2D3748]",
+          bg: "group-hover:bg-[#2D3748]",
         },
       ],
     },

@@ -35,14 +35,14 @@ const Experience = () => {
         <h3 className="text-3xl font-bold mb-7">{experience.title}</h3>
       </div>
       <ScrollArea className="h-[500px]">
-        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+        <ul className="grid grid-cols-1  gap-[30px]">
           {experience.items.map((item, index) => (
             <Card
               key={index}
               className="min-h-[200px] py-6 px-10 flex flex-col justify-center items-center lg:items-start gap-1 text-white rounded-xl"
             >
               <CardHeader className="p-0">
-                <Badge className="w-fit bg-primary text-primary-foreground">
+                <Badge className="w-fit bg-primary text-primary-foreground mb-2 text-md">
                   {item.duration}
                 </Badge>
                 <CardTitle className="text-xl max-w-[300px] min-h-[60px] text-center lg:text-left">
@@ -50,11 +50,13 @@ const Experience = () => {
                 </CardTitle>{" "}
               </CardHeader>
               <CardContent className="p-0 mb-7">
-                <CardDescription className="text-white/60">
+                <CardDescription className="text-white/80">
                   {item.description.map((description, index) => (
                     <div key={index} className="relative pl-4">
                       <span className="absolute left-0 top-2 size-[6px] rounded-full bg-primary"></span>
-                      <p className="text-sm leading-relaxed">{description}</p>
+                      <p className="text-[17px] leading-relaxed">
+                        {description}
+                      </p>
                     </div>
                   ))}
                 </CardDescription>
